@@ -53,6 +53,22 @@
         </pluginManagement>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Class-Path>../classes</Class-Path>
+                        </manifestEntries>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>org.liveintellect.standaloneapps.copieddirdatefixer.CopiedDirDateFixer</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
                 <!--  Note: Normally, this plugin would be run using
                 "mvn compile assembly:single" but the execution
                 clause below binds it to the normal 'package' lifecycle phase
