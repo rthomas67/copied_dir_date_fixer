@@ -1,4 +1,4 @@
-#Summary
+# Summary
 Simple Command-Line Utility that transfers the lastModified
 and created date/time information from an entire directory
 tree to the directory and subdirectories of a duplicate copy.
@@ -8,7 +8,7 @@ preserves the date/time information on files but creates
 the directories in the target copy with the current system
 time.
 
-#Details
+# Details
 * Runs **AFTER** the copy is complete.
 * Can be run without the **-commitMode true** parameter in order
 to test to see what would happen first.
