@@ -89,8 +89,12 @@ public class CopiedDirDateFixer {
                 if (lastModMismatch || createdMismatch) {
                     System.out.println(targetDirectoryFile.getAbsolutePath() +
                             ((commitMode) ? " overwritten " : " mismatched ") + " from file dates on source directory: " + sourceDirectoryFile.getAbsolutePath()
-                            + ((lastModMismatch) ? "\n     lastModified - S: " + sourceDirectoryLastModifiedDateText + " -> overwrites -> T: " + targetDirectoryLastModifiedDateText : "")
-                            + ((createdMismatch) ? "\n     created - S: " + sourceDirectoryCreatedDateText + " -> overwrites -> T: " + targetDirectoryCreatedDateText : "")
+                            + ((lastModMismatch) ? "\n     lastModified - S: " + sourceDirectoryLastModifiedDateText
+                                + " -> " + ((commitMode) ? "overwrites" : "would overwrite")
+                                + " -> T: " + targetDirectoryLastModifiedDateText : "")
+                            + ((createdMismatch) ? "\n     created - S: " + sourceDirectoryCreatedDateText
+                                + " -> "  + ((commitMode) ? "overwrites" : "would overwrite")
+                                + " -> T: " + targetDirectoryCreatedDateText : "")
                         );
                     // Overwrite the lastModified timestamp
                     if (commitMode) {
