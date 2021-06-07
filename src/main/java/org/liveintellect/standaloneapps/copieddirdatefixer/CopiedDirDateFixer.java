@@ -197,8 +197,8 @@ public class CopiedDirDateFixer {
             pathsCli = new BasicParser().parse(pathsOptions, args);
         } catch(UnrecognizedOptionException ex) {
             // ignore - this could happen if the drive options are passed instead
-            System.out.println("Valid options for drivesCli may have caused this: "
-                    + ex.getMessage());
+            //System.out.println("Valid options for drivesCli may have caused this: "
+            //        + ex.getMessage());
         }
         CommandLine drivesCli = null;
         try {
@@ -206,8 +206,8 @@ public class CopiedDirDateFixer {
         } catch (UnrecognizedOptionException ex) {
             // ignore this too when a mismatched combination of options is used
             // like -s with -n
-            System.out.println("A mixed set of options for drivesCli and pathsCli may have caused this: "
-                + ex.getMessage());
+            //System.out.println("A mixed set of options for drivesCli and pathsCli may have caused this: "
+            //    + ex.getMessage());
         }
         if (pathsCli != null && pathsCli.hasOption(OPTION_SHORT_SOURCE_BASE_DIRECTORY_PATH)
                 && pathsCli.hasOption(OPTION_SHORT_TARGET_BASE_DIRECTORY_PATH)) {
